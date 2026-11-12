@@ -1,5 +1,5 @@
 /**
- * Paso 2 · UI generativa "estática" + estado compartido.
+ * Paso 2: UI generativa "estática" + estado compartido.
  *
  * Tú escribes los componentes Angular; el agente decide CUÁNDO mostrarlos
  * llamando a herramientas (tools) que el frontend registra y anuncia por AG-UI.
@@ -56,7 +56,7 @@ export class Paso2 {
     registerComponent({
       agentId: 'paso2',
       name: 'mostrar_sesiones',
-      description: 'Muestra tarjetas con charlas del meetup.',
+      description: 'Muestra tarjetas con charlas del DevFest.',
       parameters: z.object({ ids: z.array(z.string()).describe('ids de las charlas') }),
       component: SesionesTool,
     });
@@ -77,7 +77,7 @@ export class Paso2 {
     registerHumanInTheLoop({
       agentId: 'paso2',
       name: 'confirmar_inscripcion',
-      description: 'Pide al usuario que confirme su inscripción al meetup.',
+      description: 'Pide al usuario que confirme su inscripción al DevFest.',
       parameters: z.object({
         nombre: z.string(),
         email: z.string(),

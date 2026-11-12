@@ -7,9 +7,9 @@ import { MEETUP, SESIONES } from '../data/meetup';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <aside class="card evento">
-      <small class="eyebrow">Meetup</small>
+      <small class="eyebrow">GDG Sucre presenta</small>
       <h2>{{ meetup.nombre }}</h2>
-      <p class="meta">{{ meetup.fecha }} · {{ meetup.lugar }}</p>
+      <p class="meta">{{ meetup.fecha }}<br />{{ meetup.lugar }}</p>
       <p>{{ meetup.descripcion }}</p>
       <h3>Agenda</h3>
       <ol class="agenda">

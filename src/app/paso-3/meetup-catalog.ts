@@ -1,5 +1,5 @@
 /**
- * Paso 3 · El catálogo A2UI.
+ * Paso 3: el catálogo A2UI.
  *
  * El agente NO envía código: envía JSON que nombra componentes de este catálogo.
  * Aquí decides qué componentes existen, qué props aceptan (con zod) y con qué
@@ -18,7 +18,7 @@ import { CATALOG_ID } from './catalog-id';
 
 const definiciones = {
   SesionCard: {
-    description: 'Tarjeta de una charla del meetup, con el estilo visual de GDG.',
+    description: 'Tarjeta de una charla del DevFest, con el estilo visual de DevFest.',
     props: z.object({
       titulo: DynamicStringSchema,
       ponente: DynamicStringSchema,
@@ -29,7 +29,7 @@ const definiciones = {
     }),
   },
   TicketCard: {
-    description: 'Entrada confirmada al meetup. Úsala solo después de que el usuario envíe la inscripción.',
+    description: 'Entrada confirmada al DevFest. Úsala solo después de que el usuario envíe la inscripción.',
     props: z.object({
       nombre: DynamicStringSchema,
       email: DynamicStringSchema,

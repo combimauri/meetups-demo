@@ -1,5 +1,5 @@
 /**
- * Paso 1 · Un chat conectado a un agente por AG-UI.
+ * Paso 1: un chat conectado a un agente por AG-UI.
  *
  * Todo lo que hace falta: provideCopilotKit (en app.config.ts) y <copilot-chat>.
  * Abre DevTools > Network > "run" para ver los eventos SSE de AG-UI llegando.

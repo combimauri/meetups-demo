@@ -18,9 +18,9 @@ export type MostrarSesionesArgs = { ids: string[] };
       @for (s of sesiones(); track s.id) {
         <article class="sesion-mini" [attr.data-track]="s.track">
           <div>
-            <b>{{ s.hora }}</b> · {{ s.sala }} · <span class="chip">{{ s.track }}</span>
+            <b>{{ s.hora }}</b> {{ s.sala }} <span class="chip">{{ s.track }}</span>
             <h4>{{ s.titulo }}</h4>
-            <p>{{ s.ponente }} · {{ s.nivel }}</p>
+            <p>{{ s.ponente }} | {{ s.nivel }}</p>
           </div>
           <button type="button" [disabled]="agenda.tiene(s.id)" (click)="agenda.agregar(s.id)">
             {{ agenda.tiene(s.id) ? '✓ En tu agenda' : '+ Agregar' }}

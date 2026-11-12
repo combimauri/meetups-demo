@@ -16,10 +16,10 @@ export type ConfirmarInscripcionArgs = { nombre: string; email: string; sesiones
   template: `
     <div class="hitl">
       <small class="eyebrow">¿Confirmas tu inscripción?</small>
-      <p><b>{{ toolCall().args.nombre }}</b> · {{ toolCall().args.email }}</p>
+      <p><b>{{ toolCall().args.nombre }}</b>, {{ toolCall().args.email }}</p>
       <ul>
         @for (s of sesiones(); track s.id) {
-          <li>{{ s.hora }} · {{ s.titulo }}</li>
+          <li>{{ s.hora }} | {{ s.titulo }}</li>
         } @empty {
           <li>Acceso general (sin charlas elegidas)</li>
         }

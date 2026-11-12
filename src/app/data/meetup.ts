@@ -1,5 +1,5 @@
 /**
- * Datos del meetup que usa toda la demo (frontend y agente).
+ * Datos del evento que usa toda la demo (frontend y agente).
  * Son datos de ejemplo: cámbialos por la agenda real de tu evento.
  */
 
@@ -16,18 +16,18 @@ export interface Sesion {
 }
 
 export const MEETUP = {
-  nombre: 'Build with AI · GDG Sucre',
-  fecha: 'Sábado · 9:30 a 13:30',
+  nombre: 'DevFest Sucre 2026',
+  fecha: 'Sábado 28 de noviembre de 2026, de 9:30 a 13:30',
   lugar: 'Sucre, Bolivia',
   descripcion:
-    'Una mañana de charlas y demos sobre IA aplicada al desarrollo web, organizada por la comunidad GDG Sucre.',
+    'El DevFest de la comunidad GDG Sucre: charlas y demos sobre IA, web y cloud para desarrolladores.',
 };
 
 export const SESIONES: Sesion[] = [
   {
     id: 'web-agentica',
     titulo: 'Más allá del chat: interfaces agénticas en Angular',
-    ponente: 'Mauri Arce',
+    ponente: 'Mauricio Arce Torrez',
     hora: '10:00',
     sala: 'Auditorio',
     nivel: 'Introductorio',
@@ -100,7 +100,7 @@ export function buscarSesion(id: string): Sesion | undefined {
 export function agendaComoTexto(): string {
   const lineas = SESIONES.map(
     (s) =>
-      `- [${s.id}] ${s.hora} · ${s.sala} · "${s.titulo}" (${s.ponente}) · ${s.nivel} · track ${s.track} · ${s.cupos} cupos. ${s.resumen}`,
+      `- [${s.id}] ${s.hora}, ${s.sala}: "${s.titulo}" (${s.ponente}). Nivel ${s.nivel}, track ${s.track}, ${s.cupos} cupos. ${s.resumen}`,
   );
   return [
     `Evento: ${MEETUP.nombre}`,

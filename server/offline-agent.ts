@@ -104,7 +104,7 @@ export class OfflineAgent extends AbstractAgent {
 
   private decidir(input: RunAgentInput): Accion {
     const ultimo = input.messages.at(-1);
-    if (!ultimo) return { tipo: 'texto', texto: '¡Hola! ¿En qué te ayudo con el meetup?' };
+    if (!ultimo) return { tipo: 'texto', texto: '¡Hola! ¿En qué te ayudo con el DevFest?' };
 
     // Respuesta después de que el frontend ejecutó una herramienta.
     if (ultimo.role === 'tool') {
@@ -128,10 +128,10 @@ export class OfflineAgent extends AbstractAgent {
   // Paso 1: solo texto.
   private decidirTexto(t: string): Accion {
     if (t.includes('cuando') || t.includes('donde') || t.includes('hora')) {
-      return { tipo: 'texto', texto: `El meetup es el **${MEETUP.fecha}** en ${MEETUP.lugar}. ¡Te esperamos!` };
+      return { tipo: 'texto', texto: `El DevFest es el **${MEETUP.fecha.toLowerCase()}** en ${MEETUP.lugar}. ¡Te esperamos!` };
     }
     if (t.includes('ia') || t.includes('charla') || t.includes('agenda')) {
-      const lista = SESIONES.map((s) => `- **${s.hora}** · ${s.titulo}`).join('\n');
+      const lista = SESIONES.map((s) => `- **${s.hora}** ${s.titulo}`).join('\n');
       return { tipo: 'texto', texto: `Esta es la agenda:\n\n${lista}\n\n¿Te interesa alguna en particular?` };
     }
     return { tipo: 'texto', texto: `¡Hola! Soy el asistente de ${MEETUP.nombre}. Pregúntame por la agenda, el horario o el lugar.` };
@@ -172,7 +172,7 @@ export class OfflineAgent extends AbstractAgent {
       const titulos = (ctx.sesiones ?? [])
         .map((id) => buscarSesion(id))
         .filter(Boolean)
-        .map((s) => `${s!.hora} · ${s!.titulo}`);
+        .map((s) => `${s!.hora} | ${s!.titulo}`);
       return {
         tipo: 'tool',
         nombre: 'render_a2ui',
@@ -205,7 +205,7 @@ export class OfflineAgent extends AbstractAgent {
           components: [
             { id: 'root', component: 'Card', child: 'col' },
             { id: 'col', component: 'Column', children: ['titulo', 'nombre', 'email', 'sesiones', 'enviar'] },
-            { id: 'titulo', component: 'Text', text: `Inscripción · ${MEETUP.nombre}`, variant: 'h3' },
+            { id: 'titulo', component: 'Text', text: `Inscripción al ${MEETUP.nombre}`, variant: 'h3' },
             { id: 'nombre', component: 'TextField', label: 'Nombre', value: { path: '/form/nombre' } },
             { id: 'email', component: 'TextField', label: 'Email', value: { path: '/form/email' } },
             {
@@ -214,7 +214,7 @@ export class OfflineAgent extends AbstractAgent {
               label: '¿A qué charlas vas?',
               variant: 'multipleSelection',
               value: { path: '/form/sesiones' },
-              options: SESIONES.map((s) => ({ label: `${s.hora} · ${s.titulo}`, value: s.id })),
+              options: SESIONES.map((s) => ({ label: `${s.hora} | ${s.titulo}`, value: s.id })),
             },
             {
               id: 'enviar',

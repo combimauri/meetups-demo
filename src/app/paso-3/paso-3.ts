@@ -1,5 +1,5 @@
 /**
- * Paso 3 · A2UI: el agente compone la interfaz.
+ * Paso 3: A2UI, el agente compone la interfaz.
  *
  * Aquí no registramos ninguna tool. El runtime le da al agente "render_a2ui"
  * y la app le envía su catálogo (meetup-catalog.ts). El agente responde con JSON
@@ -18,9 +18,9 @@ import { CopilotChat } from '@copilotkit/angular';
       <aside class="card">
         <small class="eyebrow">Prueba con</small>
         <ul class="sugerencias">
-          <li>“Quiero inscribirme al meetup”</li>
-          <li>“Muéstrame las charlas de IA”</li>
-          <li>“Compárame las charlas de las 11:30”</li>
+          <li>"Quiero inscribirme al DevFest"</li>
+          <li>"Muéstrame las charlas de IA"</li>
+          <li>"Compárame las charlas de las 11:30"</li>
         </ul>
         <p class="nota">
           El agente solo puede usar los componentes del catálogo:

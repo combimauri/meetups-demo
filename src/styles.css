@@ -5,10 +5,10 @@
   --gdg-red: #ea4335;
   --gdg-yellow: #f9ab00;
   --gdg-green: #34a853;
-  --fondo: #f8f9fa;
+  --fondo: #f0f0f0; /* DevFest 2026: Off White */
   --superficie: #ffffff;
-  --borde: #dadce0;
-  --texto: #202124;
+  --borde: #1e1e1e; /* DevFest 2026: contornos negros */
+  --texto: #1e1e1e; /* DevFest 2026: Black 02 */
   --texto-suave: #5f6368;
 
   /* El catálogo básico de A2UI se tematiza con variables CSS */
@@ -46,7 +46,7 @@ nav { display: flex; gap: 8px; }
 nav a {
   --c: var(--gdg-blue);
   padding: 8px 14px; border-radius: 999px; color: var(--texto); text-decoration: none;
-  border: 1px solid var(--borde); font-weight: 500;
+  border: 2px solid var(--borde); font-weight: 500;
 }
 nav a[data-color='red'] { --c: var(--gdg-red); }
 nav a[data-color='green'] { --c: var(--gdg-green); }
@@ -57,14 +57,14 @@ nav a.activo b { color: #fff; }
 /* Layout de cada paso: panel a la izquierda, chat a la derecha */
 .layout { display: grid; grid-template-columns: minmax(260px, 360px) 1fr; gap: 20px; height: 100%; }
 .layout--ancho { grid-template-columns: minmax(240px, 300px) 1fr; }
-.card { background: var(--superficie); border: 1px solid var(--borde); border-radius: 20px; padding: 20px; overflow: auto; }
+.card { background: var(--superficie); border: 2px solid var(--borde); border-radius: 28px; padding: 20px; overflow: auto; }
 .card h2 { margin: 4px 0; font-size: 22px; }
 .card h3 { margin: 18px 0 8px; font-size: 15px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 700; color: var(--gdg-blue); }
 .meta { color: var(--texto-suave); margin: 0 0 8px; }
 .chat-panel {
-  min-height: 0; height: 100%; background: var(--superficie); border: 1px solid var(--borde);
-  border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
+  min-height: 0; height: 100%; background: var(--superficie); border: 2px solid var(--borde);
+  border-radius: 28px; overflow: hidden; display: flex; flex-direction: column;
 }
 .chat-panel copilot-chat { flex: 1; min-height: 0; display: block; }
 

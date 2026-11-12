@@ -9,7 +9,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
     <header class="barra">
       <a class="marca" routerLink="/">
         <span class="puntos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span>GDG Sucre <small>· demo web agéntica</small></span>
+        <span>DevFest Sucre 2026 <small>demo web agéntica</small></span>
       </a>
       <nav>
         @for (p of pasos; track p.ruta) {
@@ -24,8 +24,8 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 export class App {
   readonly pasos = [
-    { num: 1, ruta: '/paso-1', nombre: 'Chat · AG-UI', color: 'blue' },
-    { num: 2, ruta: '/paso-2', nombre: 'Tools · estado', color: 'red' },
+    { num: 1, ruta: '/paso-1', nombre: 'Chat con AG-UI', color: 'blue' },
+    { num: 2, ruta: '/paso-2', nombre: 'Tools y estado', color: 'red' },
     { num: 3, ruta: '/paso-3', nombre: 'A2UI', color: 'green' },
   ];
 }
